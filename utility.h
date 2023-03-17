@@ -140,15 +140,16 @@ inline T* my_malloc(int array_size)
 template <typename T>
 inline void my_free(T *a)
 {
-#ifdef CPP
-    delete[] a;
-#elif defined IMM
-    _mm_free(a);
-#elif defined TBB
-    scalable_free(a);
-#else
-    scalable_free(a);
-#endif
+// TODO: FIXME! :-O
+// #ifdef CPP
+//     delete[] a;
+// #elif defined IMM
+//     _mm_free(a);
+// #elif defined TBB
+//     scalable_free(a);
+// #else
+//     scalable_free(a);
+// #endif
 }
 
 // Prefix sum (Sequential)
